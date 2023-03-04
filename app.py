@@ -12,8 +12,7 @@ def form():
 
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
-    num = request.form['number']
-    print(num)
-    return render_template('submit_form.html')
+    print(request.form.getlist('sectors'))
+    return render_template('submit_form.html', )
 if __name__ == '__main__':
     app.run()
