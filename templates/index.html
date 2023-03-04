@@ -41,7 +41,6 @@
       <div class="header_main">
          <div class="mobile_menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="logo_mobile"><a href="index.html"><img src="logo.png"></a></div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -49,11 +48,13 @@
             </nav>
          </div>
          <div class="container-fluid">
-            <div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+            <div class="logo"><a href="{{ url_for('index') }}"><img
+                     src="{{ url_for('static', filename='images/logo.png') }}"></a></div>
             <div class="menu_main">
             </div>
          </div>
       </div>
+   </div>
       <!-- banner section start -->
       <div class="banner_section layout_padding">
          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -104,20 +105,6 @@
             <input type="text" class="mail_text" placeholder="Enter your email" name="Enter your email">
             <div class="subscribe_bt"><a href="#">Subscribe</a></div>
          </div>
-         <div class="location_main">
-            <div class="call_text"><img src="call-icon.png"></div>
-            <div class="call_text"><a href="#">Call +01 1234567890</a></div>
-            <div class="call_text"><img src="mail-icon.png"></div>
-            <div class="call_text"><a href="#">demo@gmail.com</a></div>
-         </div>
-         <div class="social_icon">
-            <ul>
-               <li><a href="#"><img src="fb-icon.png"></a></li>
-               <li><a href="#"><img src="twitter-icon.png"></a></li>
-               <li><a href="#"><img src="linkedin-icon.png"></a></li>
-               <li><a href="#"><img src="instagram-icon.png"></a></li>
-            </ul>
-         </div>
       </div>
    </div>
    <!-- footer section end -->
@@ -130,16 +117,16 @@
    </div>
    <!-- copyright section end -->
    <!-- Javascript files-->
-   <script src="/js/jquery.min.js"></script>
-   <script src="/js/popper.min.js"></script>
-   <script src="/js/bootstrap.bundle.min.js"></script>
-   <script src="/js/jquery-3.0.0.min.js"></script>
-   <script src="/js/plugin.js"></script>
+   <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/jquery-3.0.0.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/plugin.js') }}"></script>
    <!-- sidebar -->
-   <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="/js/custom.js"></script>
+   <script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
    <!-- javascript -->
-   <script src="/js/owl.carousel.js"></script>
+   <script src="{{ url_for('static', filename='js/owl.carousel.js') }}"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
 
