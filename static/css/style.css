@@ -2,6 +2,7 @@
 
 
 :root {
+    --primary-light: #30be30;
     --primary: #228B22;
     --primary-dark: #006400;
     --black: #000000;
@@ -387,9 +388,37 @@ footer .copy {
 
 }
 
+.checkbox {
+    width: 110px;
+    border-radius: 50%;
+}
+
 input[type="checkbox"] {
     display:none;
 }
+
+input[type="checkbox"] + label {
+    margin:15px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:2px solid #000000;
+    font-weight: bold;
+}
+
+input[type="checkbox"]:hover + label {
+    background-color: var(--primary-light);
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: var(--primary);
+    color:white;
+}
+
 .slider {
     height:100vh;
     display: flex;
@@ -401,6 +430,7 @@ input[type="checkbox"] {
 
 .slider input[type="range"] {
     width: 75%;
+    background-color: var(--primary);
 }
 
 .slider p{

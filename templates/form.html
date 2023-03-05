@@ -7,6 +7,9 @@
     <title>Form Submission</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='icon' href="{{url_for('static', filename='images/favicon.ico')}}" type='image/x-icon' sizes="16x16" />
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -14,12 +17,12 @@
 </head>
 
 <body class="m-auto">
-    <form method="POST" action="{{ url_for('submit_form') }}">
+    <form method="POST" action="{{ url_for('submit_form') }}" onsubmit="return validateForm()">
         <section id="sector-form" class="d-flex align-items-center justify-content-center" style="height:100vh">
-            <fieldset name="sectors" class="d-flex flex-column align-items-center justify-content-center">
-                <legend class="unbounded">What sectors would you like to invest in?</legend>
+            <fieldset name="sectors" class="d-flex flex-column align-items-center justify-content-center" style="text-align:center">
+                <legend class="jakarta">What <span class="unbounded" style="color:var(--primary); padding:10px">sectors</span> would you like to invest in?</legend>
                 <div class="d-flex flex-row m-auto">
-                    <input type="checkbox" name="sectors" id="IT" value="Information Technology">
+                    <input type="checkbox" name="sectors" id="IT" value="Information Technology" required>
                     <label for="IT" class="p-5">Information Technology</label><br>
 
                     <input type="checkbox" name="sectors" id="HC" value="Health Care">
@@ -27,28 +30,29 @@
 
                     <input type="checkbox" name="sectors" id="FIN" value="Financials">
                     <label for="FIN" class="p-5">Financials</label><br>
-                </div>
-                <div class="d-flex flex-row m-auto">
+
                     <input type="checkbox" name="sectors" id="CD" value="Consumer Discretionary">
                     <label for="CD" class="p-5">Consumer Discretionary</label><br>
+                </div>
+                <div class="d-flex flex-row m-auto">
 
                     <input type="checkbox" name="sectors" id="CS" value="Communication Services">
                     <label for="CS" class="p-5">Communication Services</label><br>
 
                     <input type="checkbox" name="sectors" id="IND" value="Industrial">
                     <label for="IND" class="p-5">Industrial</label><br>
-                </div>
-                <div class="d-flex flex-row m-auto">
+
                     <input type="checkbox" name="sectors" id="STAP" value="Consumer Staples">
                     <label for="STAP" class="p-5">Consumer Staples</label><br>
-
+                    
                     <input type="checkbox" name="sectors" id="ENE" value="Energy">
                     <label for="ENE" class="p-5">Energy</label><br>
+                </div>
+                <div class="d-flex flex-row m-auto">
 
                     <input type="checkbox" name="sectors" id="UTIL" value="Utilities">
                     <label for="UTIL" class="p-5">Utilities</label><br>
-                </div>
-                <div class="d-flex flex-row m-auto">
+
                     <input type="checkbox" name="sectors" id="RE" value="Real Estate">
                     <label for="RE" class="p-5">Real Estate</label><br>
 
@@ -61,90 +65,78 @@
 
         <!-- Environment -->
         <div id="environment" class="slider">
-            <label for="environment-slider">How much do you value environmental consciousness on a scale from 0 to
+            <label for="environment-slider" style="font-size:20px">How much do you value <span class="unbounded" style="color:var(--primary)">environmental consciousness</span> on a scale from 0 to
                 10?</label>
             <br>
             <input type="range" id="environment-slider" name="environment" min="0" max="10" step="1" value="5"
                 oninput="updateSliderValue('environment-slider', 'environment-value')">
             <br>
-            <p id="environment-value">5</p>
+            <p id="environment-value" class="unbounded">5</p>
             <br>
             <button type="button" class="btn btn-primary" onclick="takeTo('social')">Next</button>
         </div>
 
         <!-- Social -->
         <div id="social" class="slider">
-            <label for="social-slider">How much do you value social responsibility on a scale from 0 to 10?</label>
+            <label for="social-slider"style="font-size:30px">How much do you value <span class="unbounded" style="color:var(--primary)">social responsibility</span> on a scale from 0 to 10?</label>
             <br>
             <input type="range" id="social-slider" name="social" min="0" max="10" step="1" value="5"
                 oninput="updateSliderValue('social-slider', 'social-value')">
             <br>
-            <p id="social-value">5</p>
+            <p id="social-value" class="unbounded">5</p>
             <br>
             <button type="button" class="btn btn-primary" onclick="takeTo('governance')">Next</button>
         </div>
 
         <!-- Governance -->
         <div id="governance" class="slider">
-            <label for="governance-slider">How much do you value strong governance on a scale from 0 to 10?</label>
+            <label for="governance-slider"style="font-size:30px">How much do you value <span class="unbounded" style="color:var(--primary)">strong governance</span> on a scale from 0 to 10?</label>
             <br>
             <input type="range" id="governance-slider" name="governance" min="0" max="10" step="1" value="5"
                 oninput="updateSliderValue('governance-slider', 'governance-value')">
             <br>
-            <p id="governance-value">5</p>
+            <p id="governance-value" class="unbounded">5</p>
             <br>
             <button type="button" class="btn btn-primary" onclick="takeTo('controversy')">Next</button>
         </div>
 
         <!-- Controversy -->
         <div id="controversy" class="slider">
-            <label for="controversy-slider">How much do you care about a company's negative press on a scale from 0 to
+            <label for="controversy-slider"style="font-size:30px">How much do you care about a company's <span class="unbounded" style="color:var(--primary)">negative press</span> on a scale from 0 to
                 10?</label>
             <br>
             <input type="range" id="controversy-slider" name="controversy" min="0" max="10" step="1" value="5"
                 oninput="updateSliderValue('controversy-slider', 'controversy-value')">
             <br>
-            <p id="controversy-value">5</p>
+            <p id="controversy-value" class="unbounded">5</p>
             <br>
             <button type="button" class="btn btn-primary" onclick="takeTo('gender-diversity')">Next</button>
         </div>
 
         <!-- Gender Diversity -->
         <div id="gender-diversity" class="slider">
-            <label for="gender-diversity-slider">How much do you value gender diversity in a company on a scale from 0
+            <label for="gender-diversity-slider"style="font-size:30px">How much do you value <span class="unbounded" style="color:var(--primary)">gender diversity</span> in a company on a scale from 0
                 to
                 10?</label>
             <br>
             <input type="range" id="gender-diversity-slider" name="gender_diversity" min="0" max="10" step="1" value="5"
                 oninput="updateSliderValue('gender-diversity-slider', 'gender-diversity-value')">
             <br>
-            <p id="gender-diversity-value">5</p>
+            <p id="gender-diversity-value" class="unbounded">5</p>
             <br>
             <button type="button" class="btn btn-primary" onclick="takeTo('racial-diversity')">Next</button>
         </div>
 
         <!-- Racial Diversity -->
         <div id="racial-diversity" class="slider">
-            <label for="racial-diversity-slider">How much do you value racial diversity in a company on a scale from 0
+            <label for="racial-diversity-slider"style="font-size:30px">How much do you value <span class="unbounded" style="color:var(--primary)">racial diversity</span> in a company on a scale from 0
                 to
                 10?</label>
             <br>
             <input type="range" id="racial-diversity-slider" name="racial_diversity" min="0" max="10" step="1" value="5"
                 oninput="updateSliderValue('racial-diversity-slider', 'racial-diversity-value')">
             <br>
-            <p id="racial-diversity-value">5</p>
-            <br>
-            <button type="button" class="btn btn-primary" onclick="takeTo('risk')">Next</button>
-        </div>
-
-        <!-- Risk % -->
-        <div id="risk" class="slider">
-            <label for="risk-slider">How much risk would you like to take on?</label>
-            <br>
-            <input type="range" id="risk-slider" name="risk" min="10" max="100" step="1" value="10"
-            oninput="updateSliderValue('risk-slider', 'risk-value')">
-            <br>
-            <p><span id="risk-value">10</span>%</p>
+            <p id="racial-diversity-value" class="unbounded">5</p>
             <br>
             <input type="submit" class="btn btn-primary" value="Submit">
         </div>
@@ -157,8 +149,25 @@
         let value = document.getElementById(sliderID).value;
         document.getElementById(valueID).innerHTML = value;
     }
+
     function takeTo(id) {
         let element = document.getElementById(id);
         element.scrollIntoView();
+    }
+
+    function validateForm() {
+        var checkboxes = document.querySelectorAll('input[type=checkbox]');
+        var checked = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                checked = true;
+                break;
+            }
+        }
+        if (!checked) {
+            alert('Please select at least one checkbox');
+            return false;
+        }
+        return true;
     }
 </script>
