@@ -19,36 +19,6 @@ for x in range(4,10):
 # Create a DataFrame.
 df=df[:-3]
 
-# val1 = int(input("rate envi: "))/10
-# val2 = int(input("rate social: "))/10
-# val3 = int(input("rate governance: "))/10
-# val4 = int(input("rate controversy: "))/3
-# val5 = int(input("rate females: "))/10
-# val6 = int(input("rate blacks: "))/10
-# stockdict={}
-# alphadict={}
-# betadict={}
-
-# for iter in range(int(len(df))):
-#     lsr=(df.iloc[iter].Environment-val1)**2+(df.iloc[iter].Social-val2)**2+(df.iloc[iter].Governance-val3)**2+(df.iloc[iter].Controversey-val4)**2+(df.iloc[iter].Female-val5)**2+(df.iloc[iter].Minority-val6)**2
-#     alpha=df.iloc[iter].Alpha
-#     beta=df.iloc[iter].Beta
-#     alphadict[df.iloc[iter].Ticker]=alpha
-#     betadict[df.iloc[iter].Ticker]=beta
-#     stockdict[df.iloc[iter].Ticker]=lsr
-# stockdict=sorted(stockdict)
-# mualpha=statistics.mean(list(alphadict.values()))
-# mubeta=statistics.mean(list(betadict.values()))
-# # # Select stocks that meet alpha beta requirements
-# # mu_alpha = prelim_basket['Alpha'].mean()
-# # mu_beta = prelim_basket['Beta'].mean()
-# # final_basket = prelim_basket[(prelim_basket['Alpha'] > mu_alpha) & (prelim_basket['Beta'] < mu_beta)]
-# final_basket=[]
-# for x in stockdict[0:50]:
-#    if (alphadict[x]>mualpha) &(betadict[x]>mubeta):
-#        final_basket.append(x)
-# print(final_basket)
-
 def inputrating(industry,v1,v2,v3,v4,v5,v6):
     print('---------')
     print(industry)
@@ -86,18 +56,3 @@ def inputrating(industry,v1,v2,v3,v4,v5,v6):
         if (y[1]>mua) &(y[2]>mub):
            final_basket.append(y[0])
     return(final_basket)
-
-    # mualpha=stock
-    # mubeta=statistics.mean(list(betadict.values()))
-    # # Select stocks that meet alpha beta requirements
-    # mu_alpha = prelim_basket['Alpha'].mean()
-    # mu_beta = prelim_basket['Beta'].mean()
-    # final_basket = prelim_basket[(prelim_basket['Alpha'] > mu_alpha) & (prelim_basket['Beta'] < mu_beta)]
-
-    # final_basket=[]
-    # for x in stockdict[0:50]:
-    #     if (alphadict[x]>mualpha) &(betadict[x]>mubeta):
-    #         final_basket.append(x)
-    # return(final_basket)
-
-print(inputrating(["Energy","Financials"],1,1,1,1,1,1))
