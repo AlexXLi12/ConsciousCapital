@@ -121,7 +121,7 @@ section.landing .howitworks {
 }
 
 section.landing img {
-    width: 700px;
+    width: 900px;
 }
 
 section.landing .scroll-down {
@@ -356,4 +356,33 @@ footer .copy {
         margin-left: 0 !important;
     }
 
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+.slider {
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.slider input[type="range"] {
+    width: 75%;
+}
+
+.slider p{
+    font-size:30px;
+}
+
+.jakarta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.unbounded {
+    font-family: 'Unbounded';
 }
