@@ -52,18 +52,18 @@ def runAllocation(tickers, target):
     ef3.add_objective(objective_functions.L2_reg, gamma=2)
 
     # Solve
-    # ef1.max_sharpe(risk_free_rate=0.03)
-    # weights = ef1.clean_weights()
-    # ef1.portfolio_performance(verbose=True)
-    # print(f"Max Sharpe Weights: {weights}\n")
+    ef1.max_sharpe(risk_free_rate=0.03)
+    weights = ef1.clean_weights()
+    ef1.portfolio_performance(verbose=True)
+    #print(f"Max Sharpe Weights: {weights}\n")
 
     # ef2.min_volatility()
     # weights = ef2.clean_weights()
     # ef2.portfolio_performance(verbose=True)
     # print(f"Min Volatility Weights: {weights}\n")
 
-    ef3.efficient_risk(target)
-    weights = ef3.clean_weights()
-    ef3.portfolio_performance(verbose=True)
+    # ef3.efficient_risk(target)
+    # weights = ef3.clean_weights()
+    #ef3.portfolio_performance(verbose=True)
     #print(f"Return ({target}) Weights: {weights}\n")
-    return target, weights
+    return weights

@@ -45,7 +45,7 @@ def submit_form():
     print(answer)
     allocationAnswer = allocation.runAllocation(answer, risk)
     #print('allocation: ' + str(allocationAnswer))
-    print(f"Return ({allocationAnswer[0]}) Weights: {allocationAnswer[1]}\n")
+    print(f"Weights: {allocationAnswer}\n")
     return render_template('submit_form.html')
 if __name__ == '__main__':
     app.run()
