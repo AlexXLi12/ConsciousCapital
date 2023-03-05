@@ -33,8 +33,8 @@ def get_data(tickers):
     if stocks_notfound: print(f"Stocks not found: {stocks_notfound}")
     return data
 
-def runAllocation(tickers, target):
-    #tickers = ['GOOG', 'CVS', 'CAT', 'SBUX', 'MDLZ', 'SYK', 'COP', 'MRK', 'AMGN', 'ABT', 'PG', 'LLY']
+def runAllocation(tickers):
+    # tickers = ['GOOG', 'CVS', 'CAT', 'SBUX', 'MDLZ', 'SYK', 'COP', 'MRK', 'AMGN', 'ABT', 'PG', 'LLY']
     #target = 0.15
 
     data = get_data(tickers)
@@ -48,13 +48,14 @@ def runAllocation(tickers, target):
 
     # Evenly distribute weights
     ef1.add_objective(objective_functions.L2_reg, gamma=2)
+    ef1.add_constraint(lambda x: x >= 0.02)
     ef2.add_objective(objective_functions.L2_reg, gamma=2)
     ef3.add_objective(objective_functions.L2_reg, gamma=2)
 
     # Solve
     ef1.max_sharpe(risk_free_rate=0.03)
     weights = ef1.clean_weights()
-    ef1.portfolio_performance(verbose=True)
+    results = ef1.portfolio_performance()
     #print(f"Max Sharpe Weights: {weights}\n")
 
     # ef2.min_volatility()
@@ -66,4 +67,4 @@ def runAllocation(tickers, target):
     # weights = ef3.clean_weights()
     #ef3.portfolio_performance(verbose=True)
     #print(f"Return ({target}) Weights: {weights}\n")
-    return weights
+    return weights, results

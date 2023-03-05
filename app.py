@@ -43,9 +43,12 @@ def submit_form():
     answer = model.inputrating(sectors, int(environment[0]), int(social[0]), int(governance[0]), int(controversy[0]), int(gender_diversity[0]), int(racial_diversity[0]))
     print('ticker predictions: ', end='')
     print(answer)
-    allocationAnswer = allocation.runAllocation(answer, risk)
+    allocationAnswer = allocation.runAllocation(answer)
     # print('allocation: ' + str(allocationAnswer))
     print(f"Weights: {allocationAnswer}\n")
-    return render_template('pie.html', **{'allocation':allocationAnswer})
+    vals = list(allocationAnswer[0].values())
+    for i in range(len(vals)):
+        vals[i] = int(100.0 * float(vals[i]))
+    return render_template('pie.html', **{'keys':list(allocationAnswer[0].keys()), 'results':allocationAnswer[1],'vals':vals})
 if __name__ == '__main__':
     app.run()

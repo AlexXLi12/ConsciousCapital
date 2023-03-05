@@ -22,12 +22,6 @@ df=df[:-3]
 def inputrating(industry,v1,v2,v3,v4,v5,v6):
     print('---------')
     print(industry)
-    print(v1)
-    print(v2)
-    print(v3)
-    print(v4)
-    print(v5)
-    print(v6)
     ind=industry
     val1 = v1/10
     val2 = v2/10
@@ -55,4 +49,4 @@ def inputrating(industry,v1,v2,v3,v4,v5,v6):
     for y in stockdict.values():
         if (y[1]>mua) &(y[2]>mub):
            final_basket.append(y[0])
-    return(final_basket)
+    return(final_basket[:(15 if len(final_basket) > 18 else len(final_basket))])
