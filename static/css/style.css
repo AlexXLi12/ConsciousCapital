@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Unbounded:wght@900&display=swap%27');
 
+input[type="checkbox"] {
+    display:none;
+}
+
 .slider {
     height:100vh;
     display: flex;
