@@ -7,7 +7,6 @@ from sklearn.svm import SVR
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
 import seaborn as sns
 import collections
-import statistics
 
 df = pd.read_csv(r'ccdata.csv')
 for x in range(4,10):

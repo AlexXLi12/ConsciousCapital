@@ -7,7 +7,7 @@
     <title>Form Submission</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="{{url_for('static', 'css/style.css')}}">
 </head>
 
 <body>
@@ -55,7 +55,7 @@
         <div id="environment">
             <label for="environment-slider">How much do you value environmental consciousness on a scale from 1 to
                 10?</label>
-            <input type="range" id="environment-slider" name="environment" min="1" max="10" step="1"
+            <input type="range" id="environment-slider" name="environment" min="1" max="10" step="1" value="5"
                 oninput="updateSliderValue('environment-slider', 'environment-value')">
             <p id="environment-value">5</p>
         </div>
@@ -63,7 +63,7 @@
         <!-- Social -->
         <div id="social">
             <label for="social-slider">How much do you value social responsibility on a scale from 1 to 10?</label>
-            <input type="range" id="social-slider" name="social" min="1" max="10" step="1"
+            <input type="range" id="social-slider" name="social" min="1" max="10" step="1" value="5"
                 oninput="updateSliderValue('social-slider', 'social-value')">
             <p id="social-value">5</p>
         </div>
@@ -71,7 +71,7 @@
         <!-- Governance -->
         <div id="governance">
             <label for="governance-slider">How much do you value strong governance on a scale from 1 to 10?</label>
-            <input type="range" id="governance-slider" name="governance" min="1" max="10" step="1"
+            <input type="range" id="governance-slider" name="governance" min="1" max="10" step="1" value="5"
                 oninput="updateSliderValue('governance-slider', 'governance-value')">
             <p id="governance-value">5</p>
         </div>
@@ -80,7 +80,7 @@
         <div id="controversy">
             <label for="controversy-slider">How much do you care about a company's negative press on a scale from 1 to
                 10?</label>
-            <input type="range" id="controversy-slider" name="controversy" min="1" max="10" step="1"
+            <input type="range" id="controversy-slider" name="controversy" min="1" max="10" step="1" value="5"
                 oninput="updateSliderValue('controversy-slider', 'controversy-value')">
             <p id="controversy-value">5</p>
         </div>
@@ -90,7 +90,7 @@
             <label for="gender-diversity-slider">How much do you value gender diversity in a company on a scale from 1
                 to
                 10?</label>
-            <input type="range" id="gender-diversity-slider" name="gender_diversity" min="1" max="10" step="1"
+            <input type="range" id="gender-diversity-slider" name="gender_diversity" min="1" max="10" step="1" value="5"
                 oninput="updateSliderValue('gender-diversity-slider', 'gender-diversity-value')">
             <p id="gender-diversity-value">5</p>
         </div>
@@ -100,7 +100,7 @@
             <label for="racial-diversity-slider">How much do you value racial diversity in a company on a scale from 1
                 to
                 10?</label>
-            <input type="range" id="racial-diversity-slider" name="racial_diversity" min="1" max="10" step="1"
+            <input type="range" id="racial-diversity-slider" name="racial_diversity" min="1" max="10" step="1" value="5"
                 oninput="updateSliderValue('racial-diversity-slider', 'racial-diversity-value')">
             <p id="racial-diversity-value">5</p>
         </div>
