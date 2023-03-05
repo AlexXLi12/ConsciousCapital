@@ -14,5 +14,5 @@ We then filter the stocks based on which perform better, choosing stocks that ha
 
 Finally, we utilize award-winning Markowitzian portfolio theory, more specifically, the Mean-Variance theorem. This combined with L2 regularization allows us to calculate the asset/weight allocation for each stock in the portfolio, aiming to maximize the sharpe ratio (a measure of return compared to risk). 
 
-## What's next for Doctor Direct 🏆
+## What's next for Conscious Capital 🏆
 We want to explore different Markowitzian portfolio algorithms. Additionally, we want to extend the dataset and perhaps include more metrics to evaluate companies by.
