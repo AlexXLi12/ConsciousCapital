@@ -1,27 +1,58 @@
-import numpy as np
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.svm import SVR
+from sklearn.metrics import f1_score, accuracy_score, confusion_matrix
+import seaborn as sns
+import collections
 
-# Load and format data
-def runModel(sampl_input):
-    data = pd.read_csv('data2.csv')
-    onehot = pd.get_dummies(data.Industry)
-    data = data.drop('Industry', axis=1)
-    data = data.join(onehot)
+df = pd.read_csv(r'ccdata.csv')
+for x in range(4,10):
+    y = df.iloc[:, x].values
+    max=np.max(y)
+    min=np.min(y)
+    for val in range(len(y)):
+        y[val]=(y[val]-min)/(max-min)
+    df.iloc[:, x]=y
+# Create a DataFrame.
+df=df[:-3]
 
-    # Get user input
-    #sampl_input = np.array([9, 3, 3, 2, 4, 7, 1, 0.1, 1, 1, 2, 2, 1, 0.1, 0.1, 1, 1]) # ENV, SOC, GOV, CON, FEM, MIN, 11 Sectors
+def inputrating(industry,v1,v2,v3,v4,v5,v6):
+    print('---------')
+    print(industry)
+    print(v1)
+    print(v2)
+    print(v3)
+    print(v4)
+    print(v5)
+    print(v6)
+    ind=industry
+    val1 = v1/10
+    val2 = v2/10
+    val3 = v3/10
+    val4 = v4/3
+    val5 = v5/10
+    val6 = v6/10
+    stockdict={}
 
-    # Calculate weighted scores
-    scores = data.iloc[:,3:].multiply(sampl_input, axis=1).sum(axis=1)
-    indicies = np.argsort(scores)[-40:]
-    prelim_basket = data.iloc[indicies,:3]
-
-    # Select stocks that meet alpha beta requirements
-    mu_alpha = prelim_basket['Alpha'].mean()
-    mu_beta = prelim_basket['Beta'].mean()
-    final_basket = prelim_basket[(prelim_basket['Alpha'] > mu_alpha) & (prelim_basket['Beta'] < mu_beta)]
-
-    # Get final list of tickers
-    tickers = final_basket['Ticker'].tolist()
-
-    print(tickers)
+    for iter in range(int(len(df))):
+        if df.iloc[iter].Industry in ind:
+            lsr=(df.iloc[iter].Environment-val1)**2+(df.iloc[iter].Social-val2)**2+(df.iloc[iter].Governance-val3)**2+(df.iloc[iter].Controversey-val4)**2+(df.iloc[iter].Female-val5)**2+(df.iloc[iter].Minority-val6)**2
+            alpha=df.iloc[iter].Alpha
+            beta=df.iloc[iter].Beta
+            stockdict[lsr]=[df.iloc[iter].Ticker,alpha,beta]
+    stockdict=collections.OrderedDict(sorted(stockdict.items()))
+    mua=0
+    mub=0
+    for x in stockdict.values():
+        mua+=x[1]
+        mub+=x[2]
+    mua=mua/len(stockdict)
+    mub=mub/len(stockdict)
+    final_basket=[]
+    for y in stockdict.values():
+        if (y[1]>mua) &(y[2]>mub):
+           final_basket.append(y[0])
+    return(final_basket)
