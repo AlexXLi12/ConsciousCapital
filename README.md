@@ -24,4 +24,4 @@ Finally, we utilize award-winning Markowitzian portfolio theory, more specifical
 6. main.py - The FLASK file which connects all components of this project
 
 ## What's next for Doctor Direct 🏆
-Currently, we recognize 42 medical conditions and 132 symptoms. We plan to expand the symptoms and medical conditions to cover a greater range including physical injuries and mental illnesses. Additionally, we can continue to expand onto our website, linking APIs from hospitals directly to our services. This would allow for a more ubiquitous and thorough service. 
+We want to explore different Markowitzian portfolio algorithms. Additionally, we want to extend the dataset and perhaps include more metrics to evaluate companies by.
