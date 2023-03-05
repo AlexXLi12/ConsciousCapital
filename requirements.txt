@@ -5,3 +5,4 @@ pandas==1.4.1
 scikit_learn==1.2.1
 seaborn==0.12.2
 yfinance==0.2.12
+PyPortfolioOpt==1.5.2
