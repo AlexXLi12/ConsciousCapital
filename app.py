@@ -48,7 +48,8 @@ def submit_form():
     print(f"Weights: {allocationAnswer}\n")
     vals = list(allocationAnswer[0].values())
     for i in range(len(vals)):
-        vals[i] = int(100.0 * float(vals[i]))
-    return render_template('pie.html', **{'keys':list(allocationAnswer[0].keys()), 'results':allocationAnswer[1],'vals':vals})
+        vals[i] = 100.0 * float(vals[i])
+    return render_template('pie.html', **{'keys':list(allocationAnswer[0].keys()), 'vals':vals, 
+                                          'return':round(100*allocationAnswer[1][0],2), 'risk':round(100*allocationAnswer[1][1],2), 'sharpe':round(100*allocationAnswer[1][2],2)})
 if __name__ == '__main__':
     app.run()
