@@ -27,7 +27,7 @@ def submit_form():
     controversy = request.form.getlist('controversy')
     gender_diversity = request.form.getlist('gender_diversity')
     racial_diversity = request.form.getlist('racial_diversity')
-    risk = float(request.form.getlist('risk')[0]) / 100.0
+    # risk = float(request.form.getlist('risk')[0]) / 100.0
     
     '''print(sectors)
     print(environment)
