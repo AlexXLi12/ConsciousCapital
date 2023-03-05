@@ -44,8 +44,8 @@ def submit_form():
     print('ticker predictions: ', end='')
     print(answer)
     allocationAnswer = allocation.runAllocation(answer, risk)
-    #print('allocation: ' + str(allocationAnswer))
+    # print('allocation: ' + str(allocationAnswer))
     print(f"Weights: {allocationAnswer}\n")
-    return render_template('submit_form.html')
+    return render_template('pie.html', **{'allocation':allocationAnswer})
 if __name__ == '__main__':
     app.run()
