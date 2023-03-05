@@ -1,14 +1,14 @@
 # ConsciousCapital
 
-#### Doctor Direct aims to directly connect potential patients with the CORRECT medical professional for them, regardless of whatever particular need they have, saving valuable time for all parties.
+#### ConsciousCapital aims to help beginner investors curate portfolios that align with their values.
 
-_THIS PROJECT WAS A PART OF HACKTJ2022_
+_THIS PROJECT WAS A PART OF HACKTJ2023_
 
 ## Inspiration 🔮 
 We drew inspiration for this problem after hearing constant complaints from our parents about finding a doctor. A few common complaints always arose: "It always takes so long to get a doctor" and "It's never the right doctor." With a little bit of research into the healthcare industry, we realized there was a _real_ problem with the medical system. Medical professionals are often understaffed, and time becomes increasingly valuable for both patients and medical professionals. Additionally, we found that a common waste of time in the healthcare industry, we **improper** appointments, a.k.a. people going to the wrong doctor. Thus, we created DoctorDirect to **solve all of these problems**.
 
 ## What it does ⭐
-Our website receives user inputs which include user location and symptoms to find the nearest medical professional to treat the user. Using a Support Vector Classifier(SVC) and a Kaggle dataset with 4000+ data points, the machine learning model is able to classify the medical conditions to the inputted symptoms. DoctorDirect currently recognizes 132 symptoms which classify into 40 diseases/medical conditions. Once the disease is classified using the symptoms received from user input, the model matches it to a medical professional
+Our website receives user inputs which include user preferences regarding their values, such as environmental, social good, governance, racial diversity, gender diversity, and controversy. Using a KNN model and data on the top 100 companies listen on the biggest U.S. stock exchanges, the machine learning model is able to classify the medical conditions to the inputted symptoms. DoctorDirect currently recognizes 132 symptoms which classify into 40 diseases/medical conditions. Once the disease is classified using the symptoms received from user input, the model matches it to a medical professional
 
 ## What's in this Repo? 📑
 
