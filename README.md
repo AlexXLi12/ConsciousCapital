@@ -14,14 +14,5 @@ We then filter the stocks based on which perform better, choosing stocks that ha
 
 Finally, we utilize award-winning Markowitzian portfolio theory, more specifically, the Mean-Variance theorem. This combined with L2 regularization allows us to calculate the asset/weight allocation for each stock in the portfolio, aiming to maximize the sharpe ratio (a measure of return compared to risk). 
 
-## What's in this Repo? 📑
-
-1. static - Folder of CSS formatting and background images
-2. templates - Folder of HTML web development files
-3. doctorReturn.py - Returns a list of doctors and medical specialists for a specific disease
-4. doctorOutput.py - Returns the type of doctor that would treat a given disease with an input of its symptoms
-5. finalized_modevl.sav - The trained SVC model
-6. main.py - The FLASK file which connects all components of this project
-
 ## What's next for Doctor Direct 🏆
 We want to explore different Markowitzian portfolio algorithms. Additionally, we want to extend the dataset and perhaps include more metrics to evaluate companies by.
