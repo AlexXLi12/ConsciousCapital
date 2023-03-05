@@ -6,3 +6,4 @@ scikit_learn==1.2.1
 seaborn==0.12.2
 yfinance==0.2.12
 PyPortfolioOpt==1.5.2
+gunicorn==20.1.0
