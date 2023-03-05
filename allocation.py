@@ -37,7 +37,6 @@ if __name__=="__main__":
 
     tickers = ['GOOG', 'CVS', 'CAT', 'SBUX', 'MDLZ', 'SYK', 'COP', 'MRK', 'AMGN', 'ABT', 'PG', 'LLY']
     target = 0.15
-    print(f"\nTickers: {tickers}")
 
     data = get_data(tickers)
 
@@ -64,7 +63,7 @@ if __name__=="__main__":
     ef2.portfolio_performance(verbose=True)
     print(f"Min Volatility Weights: {weights}\n")
 
-    ef3.efficient_return(target)
+    ef3.efficient_risk(target)
     weights = ef3.clean_weights()
     ef3.portfolio_performance(verbose=True)
     print(f"Return ({target}) Weights: {weights}\n")
