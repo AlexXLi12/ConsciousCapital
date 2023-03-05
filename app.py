@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import model
+import allocation
 import numpy as np
 
 app = Flask(__name__)
@@ -26,7 +27,8 @@ def submit_form():
     controversy = request.form.getlist('controversy')
     gender_diversity = request.form.getlist('gender_diversity')
     racial_diversity = request.form.getlist('racial_diversity')
-    risk = request.form.getlist('risk')
+    risk = float(request.form.getlist('risk')[0]) / 100.0
+    
     '''print(sectors)
     print(environment)
     print(social)
@@ -39,7 +41,11 @@ def submit_form():
     #temporary (sample form results that match input for model.py)
     temporaryFormReponseCorrectFormat = np.array([9, 3, 3, 2, 4, 7, 1, 0.1, 1, 1, 2, 2, 1, 0.1, 0.1, 1, 1]) # ENV, SOC, GOV, CON, FEM, MIN, 11 Sectors
     answer = model.inputrating(sectors, int(environment[0]), int(social[0]), int(governance[0]), int(controversy[0]), int(gender_diversity[0]), int(racial_diversity[0]))
+    print('ticker predictions: ', end='')
     print(answer)
+    allocationAnswer = allocation.runAllocation(answer, risk)
+    #print('allocation: ' + str(allocationAnswer))
+    print(f"Return ({allocationAnswer[0]}) Weights: {allocationAnswer[1]}\n")
     return render_template('submit_form.html')
 if __name__ == '__main__':
     app.run()
