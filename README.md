@@ -1,8 +1,8 @@
 # ConsciousCapital
 
-#### ConsciousCapital aims to help beginner investors curate portfolios that align with their values.
+ConsciousCapital aims to help beginner investors curate portfolios that align with their ESG values.
 
-_THIS PROJECT WAS A PART OF HACKTJ2023_
+*This project was a part of HackTJ 2023 (Best Web Hack, 1x Sponsor Prize)(
 
 ## Inspiration 🔮 
 Being an new investor can be difficult, especially when you're told to conduct extensive research on the income statements, news releases, and values of hundreds of companies. We aimed to make an easy tool that makes your own stock basket based on conscious values. These include environment, social, governance, controversy, gender, and racial diversity. *This makes the barrier to entry for people much lower.*
